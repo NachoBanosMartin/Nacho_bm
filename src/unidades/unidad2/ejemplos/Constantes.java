@@ -1,6 +1,6 @@
 package unidades.unidad2.ejemplos;
 
-public class constantes {
+public class Constantes {
 
 	public static void main(String[] args) {
 		

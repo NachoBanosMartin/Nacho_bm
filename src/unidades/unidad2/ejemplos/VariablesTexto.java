@@ -1,6 +1,6 @@
 package unidades.unidad2.ejemplos;
 
-public class variablesTexto {
+public class VariablesTexto {
 
 	public static void main(String[] args) {
 		

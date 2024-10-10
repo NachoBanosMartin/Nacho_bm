@@ -1,6 +1,6 @@
 package unidades.unidad2.ejemplos;
 
-public class variableBoolenao {
+public class VariableBoolenao {
 
 	public static void main(String[] args) {
 		

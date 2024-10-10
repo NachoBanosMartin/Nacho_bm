@@ -1,6 +1,6 @@
 package unidades.unidad2.ejercicios;
 
-public class ejercico4 {
+public class Ejercico4 {
 
 	public static void main(String[] args) {
 		
