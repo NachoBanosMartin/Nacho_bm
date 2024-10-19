@@ -13,7 +13,7 @@ public class Condiciones {
 		edad= entrada.nextInt();
 		
 		
-		if (edad>18) {
+		if (edad>=18) {
 			System.out.println("Eres mayor de edad");
 			System.out.println("Ya puedes sacarte el carné");
 			System.out.println("Enhorabuena");
