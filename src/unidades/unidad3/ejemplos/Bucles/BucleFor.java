@@ -1,4 +1,4 @@
-package unidades.unidad3.ejemplos;
+package unidades.unidad3.ejemplos.Bucles;
 
 public class BucleFor {
 
