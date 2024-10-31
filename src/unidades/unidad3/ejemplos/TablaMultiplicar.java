@@ -9,7 +9,7 @@ public class TablaMultiplicar {
 		
 		Scanner entrada = new Scanner (System.in);
 		System.out.printf("Introduzca un número (1-9)");
-		int n = entrada .nextInt();
+		int n = entrada.nextInt();
 
 		
 		//Recorrer las filas
@@ -17,7 +17,8 @@ public class TablaMultiplicar {
 			
 			//Recorrer las columnas
 			for (int columna = 1; columna <= 10; columna ++) {
-		
+			// Para hacerlo a la inversa 
+			// for (int columna = 10; columna >= 1; columna --) {
 				System.out.printf("%6d", fila * columna);
 			}
 			
