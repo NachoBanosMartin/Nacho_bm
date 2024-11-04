@@ -46,7 +46,7 @@ public class Tarea1_Biblioteca {
 			
 			// Los libros tienen un precio de reposición (en caso de pérdida o daño).
 			
-			double daño = 12.5; // Se usa double cuando el número tiene coma
+			double precioDaño = 12.5; // Se usa double cuando el número tiene coma
 			
 			// Cada libro tiene una fecha de publicación.
 			
