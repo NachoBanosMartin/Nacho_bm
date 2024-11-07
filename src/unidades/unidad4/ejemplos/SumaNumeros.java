@@ -20,8 +20,8 @@ public class SumaNumeros {
 	        int num1 = leerEntero();
 	        mostrarMensaje("Intento "+i+" - Ingresa el segundo número: ");
 	        int num2 = leerEntero();
-	        int suma1 = sumar(num1,num2);
-	        System.out.println("La suma es: " + suma1);
+	        int suma = sumar(num1,num2);
+	        System.out.println("La suma es: " + suma);
 	        
 	       	}
       
