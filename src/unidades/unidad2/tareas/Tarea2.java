@@ -1,4 +1,4 @@
-package unidades.unidad4.ejercicios;
+package unidades.unidad2.tareas;
 
 import java.util.Scanner;
 
@@ -6,7 +6,7 @@ public class Tarea2 {
 
 	public static void main(String[] args) {
 		
-	       final double G = 6.674e-11; // Constante gravitacional (en notación científica)
+	       	final double G = 6.674e-11; // Constante gravitacional (en notación científica)
 	        final double PI = 3.14159;
 	        final double gravedadTierra = 9.81;
 
