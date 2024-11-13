@@ -4,6 +4,8 @@ import java.util.Scanner;
 
 public class Ejercicio1 {
 	
+	// Escribe un método Java para encontrar el número más pequeño entre tres números.
+	
 	static int NUM_VECES = 3;
     static Scanner scanner;
 
