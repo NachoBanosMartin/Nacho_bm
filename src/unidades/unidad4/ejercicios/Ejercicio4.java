@@ -21,7 +21,7 @@ public class Ejercicio4 {
 			
 	}
 	
-	 public static int pedirEdad() {
+	 static int pedirEdad() {
 	        Scanner scanner = new Scanner(System.in);
 	        System.out.println("Introduzca su edad: ");
 	        int edad = scanner.nextInt();
@@ -29,7 +29,7 @@ public class Ejercicio4 {
 	        return edad;
 	}
 	
-	 public static void mostrarResultado(int edad) {
+	 static void mostrarResultado(int edad) {
 	        if (esMayorEdad(edad)) {
 	            System.out.println("Eres mayor de edad.");
 	        } else {
@@ -37,7 +37,7 @@ public class Ejercicio4 {
 	        }
 	 }
 	   
-	public static boolean esMayorEdad(int a) {
+	static boolean esMayorEdad(int a) {
 		return a >= 18;
 	}
 	

@@ -2,7 +2,7 @@ package unidades.unidad4.tareas;
 
 import java.util.Random;
 
-public class Ayuda {
+public class Ejemplo_Random {
 
 	public static void main(String[] args) {
 		
