@@ -98,7 +98,7 @@ public class ReservaButaca {
 		System.out.println("1.Reservar");
 		System.out.println("2.Comprar");
 		System.out.println("3.Salir");
-		System.out.println("3.Anular Reserva");
+		System.out.println("4.Anular Reserva");
 		
 	}
 		
