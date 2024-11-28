@@ -12,7 +12,7 @@ public class PuntoLimpio {
 		int kilos[];
 		double media;
 		int suma, cantidadKilos;
-		int residuos;
+	
 		
 		
 		System.out.println("Ingrese el número de tipos de residuos: ");
