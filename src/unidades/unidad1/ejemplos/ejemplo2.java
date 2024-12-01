@@ -6,7 +6,7 @@ public class ejemplo2 {
 
 
     public static void main(String[] args) {
-        Scanner scanner = new Scanner(System.in);
+        Scaner scanner = new Scanner(System.in);
 
   
         mostrarMenu();
