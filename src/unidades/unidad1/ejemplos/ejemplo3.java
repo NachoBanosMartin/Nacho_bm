@@ -6,7 +6,7 @@ public class ejemplo3 {
 
     public static void main(String[] args) {
     	
-        Scaner scanner = new Scanner(System.in);
+        Scanner scanner = new Scanner(System.in);
         double total = 0.0;
         int opcion;
 

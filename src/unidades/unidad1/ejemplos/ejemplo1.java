@@ -5,7 +5,7 @@ import java.util.Scanner;
 public class ejemplo1 {
 
     public static void main(String[] args) {
-        Scaner scanner = new Scanner(System.in);
+        Scanner scanner = new Scanner(System.in);
         String[] bocadillos = {"Jamón", "Queso", "Vegetal", "Pollo"};
         double[] precios = {3.50, 2.75, 3.00, 4.00};
 
