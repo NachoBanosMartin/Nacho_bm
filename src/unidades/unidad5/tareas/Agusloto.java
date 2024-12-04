@@ -21,7 +21,7 @@ public class Agusloto {
 			
 			for (int  i = 0; i < NUM_FILAS; i++) { 
 				for (int j = 0; j < NUM_COLUMNAS; j++) {
-					System.out.println(numero [i] [j]);
+					System.out.print(numero [i] [j]);
 				}
 				System.out.println();
 			}
