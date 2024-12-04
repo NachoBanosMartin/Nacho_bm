@@ -13,21 +13,49 @@ public class EjercicioEstaciones {
 
 		switch (mes) {
 		
-			case 12,1,2:
-				System.out.println("Invierno");
-				break;
-			case 3,4,5:
-				System.out.println("Primavera");
-				break;
-			case 6,7,8:
-				System.out.println("Verano");
-					if (mes==7);
-					System.out.println("Es mi cumple");
-				break;
-			case 9,10,11:
-				System.out.println("Otoño");
-				break;
-			default:
+			case 12:
+			System.out.println("Invierno");
+			break;
+		case 1:
+			System.out.println("Invierno");
+			break;
+		case 2:
+			System.out.println("Invierno");
+			break;
+		case 3:
+			System.out.println("Primavera");
+			break;
+		case 4:
+			System.out.println("Primavera");
+			break;
+		case 5:
+			System.out.println("Primavera");
+			break;
+		case 6:
+			System.out.println("Verano");
+			if (mes==7);
+			System.out.println("Es mi cumple");
+			break;
+		case 7:
+			System.out.println("Verano");
+			if (mes==7);
+			System.out.println("Es mi cumple");
+			break;
+		case 8:
+			System.out.println("Verano");
+			if (mes==7);
+			System.out.println("Es mi cumple");
+			break;
+		case 9:
+			System.out.println("Otoño");
+			break;
+		case 10:
+			System.out.println("Otoño");
+			break;
+		case 11:
+			System.out.println("Otoño");
+			break;
+		default:
 				System.out.println("No es una opción válida");	
 			}
 		entrada.close();

@@ -49,23 +49,55 @@ public class EjercicioEstacionesMeteorológicas {
 		int estacion = 0;
 		
 		switch (mes) {
-			case 12, 1, 2:
-				System.out.println("Invierno");
-				estacion = 4;
-				break;
-			case 3, 4, 5:
-				System.out.println("Primavera");
-				estacion = 1;
-				break;
-			case 6, 7, 8:
-				System.out.println("Verano");
-				estacion = 2;
-				break;
-			case 9, 10, 11:
-				System.out.println("Otoño");
-				estacion = 3;
-				break;
-			default:
+			case 12:
+			System.out.println("Invierno");
+			estacion = 4;
+			break;
+		case 1:
+			System.out.println("Invierno");
+			estacion = 4;
+			break;
+		case 2:
+			System.out.println("Invierno");
+			estacion = 4;
+			break;
+		case 3:
+			System.out.println("Primavera");
+			estacion = 1;
+			break;
+		case 4:
+			System.out.println("Primavera");
+			estacion = 1;
+			break;
+		case 5:
+			System.out.println("Primavera");
+			estacion = 1;
+			break;
+		case 6:
+			System.out.println("Verano");
+			estacion = 2;
+			break;
+		case 7:
+			System.out.println("Verano");
+			estacion = 2;
+			break;
+		case 8:
+			System.out.println("Verano");
+			estacion = 2;
+			break;
+		case 9:
+			System.out.println("Otoño");
+			estacion = 3;
+			break;
+		case 10:
+			System.out.println("Otoño");
+			estacion = 3;
+			break;
+		case 11:
+			System.out.println("Otoño");
+			estacion = 3;
+			break;
+		default:
 				System.out.println("No es una opción válida");
 		}
 		
