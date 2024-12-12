@@ -14,7 +14,7 @@ public class PelotasPádel {
 		int pista [] [] = new int [FILAS] [COLUMNAS];
 		int pelotas [] = new int [NUM_PELOTAS];
 		
-		crearPista(pista);
+		crearPista(pista)
 		mostrarPista(pista);
 		generarPelotas(pelotas);
 		mostrarCantidadPelotas(pelotas);
