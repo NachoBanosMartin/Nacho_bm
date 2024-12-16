@@ -17,7 +17,7 @@ public class Ascensor {
             System.out.println("1.Marcar planta");
             System.out.println("2.Abrir puerta");
             System.out.println("3.Cerrar puerta");
-            System.out.println("4.Apagar...");
+            System.out.println("4.Apagar..");
                        
             opcion = entrada.nextInt();
             
