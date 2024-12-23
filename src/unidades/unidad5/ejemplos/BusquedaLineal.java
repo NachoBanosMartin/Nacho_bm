@@ -15,11 +15,6 @@ public class BusquedaLineal {
 
 		}
 		
-		
-		
-		
-		
-		
 	}
 
 	static boolean buscar(int array[], int elemento) {

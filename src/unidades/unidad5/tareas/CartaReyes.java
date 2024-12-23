@@ -6,6 +6,7 @@ public class CartaReyes {
 	
 	String[] regalos = {"Bici", "Monopatín", "Balón", "Libro", "Consola", "Ropa"};
 	int[] cantidades = {6,6,10,10,2,8};
+	int[] contadorRey = {0,0,0};
 	static Scanner entrada = new Scanner(System.in);
 	
 

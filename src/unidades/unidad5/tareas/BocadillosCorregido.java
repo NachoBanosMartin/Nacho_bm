@@ -2,7 +2,7 @@ package unidades.unidad5.tareas;
 
 import java.util.Random;
 
-public class BocadillosResuelto {
+public class BocadillosCorregido {
     public static void main(String[] args) {
     	
         String[] ingredientes = {"Jamón", "Queso", "Lechuga", "Atún", "Tomate", "Huevo Duro", "Pollo", "Aceitunas", 
