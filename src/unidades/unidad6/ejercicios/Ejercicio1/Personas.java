@@ -1,0 +1,16 @@
+package unidades.unidad6.ejercicios.Ejercicio1;
+
+public class Personas {
+    public static void main(String[] args) {
+    	
+        
+        DatosPersonales persona1 = new DatosPersonales ("Juan Pérez", "Calle Principal 23", 30, "123456789 \n");
+        DatosPersonales persona2 = new DatosPersonales("Octavio Martín", "Calle Granados 12", 37, "123765489");
+
+
+        
+        System.out.println("Información inicial:\n");
+        persona1.mostrarInformacion();
+        persona2.mostrarInformacion();
+    }
+}
