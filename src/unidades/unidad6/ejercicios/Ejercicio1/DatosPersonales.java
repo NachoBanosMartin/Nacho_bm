@@ -1,5 +1,10 @@
 package unidades.unidad6.ejercicios.Ejercicio1;
 
+/* 
+ Diseñe una clase que contenga los siguientes datos personales: nombre, dirección, 
+ edad y número de teléfono. Escriba los métodos de acceso y modificación adecuados.
+*/
+
 public class DatosPersonales {
     // Atributos de la clase
     private String nombre;
