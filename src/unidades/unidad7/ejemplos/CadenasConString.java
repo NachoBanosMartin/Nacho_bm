@@ -52,3 +52,24 @@ public class CadenasConString {
 	}
 
 }
+
+
+
+/*
+	Ejercicio 2:  
+	Diseñar un programa que solicite al usuario una frase y una palabra. 
+	A continuación, buscará cuántas veces aparece la palabra en la frase
+*/
+
+
+
+
+
+
+
+
+
+
+
+
+
