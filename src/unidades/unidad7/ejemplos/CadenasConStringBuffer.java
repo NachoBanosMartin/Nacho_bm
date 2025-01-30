@@ -4,6 +4,7 @@ public class CadenasConStringBuffer {
 
 	public static void main(String[] args) {
 		
+		
 		StringBuffer sbfVacio = new StringBuffer();
 		StringBuffer sbf = new StringBuffer("Desarrollo de aplicaciones web");
 		StringBuilder sbb = new StringBuilder("Desarrollo de aplicaciones multiplataforma");

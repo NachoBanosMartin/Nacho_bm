@@ -2,6 +2,7 @@ package unidades.unidad7.ejercicios;
 
 import java.util.Random;
 
+
 public class Ejercicio1 {
 	
 	// Escriba un programa Java generar un número aleatorio entre 1 y 10.
