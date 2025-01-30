@@ -150,6 +150,10 @@ public class Empleado { //
 		return sonIguales;
 	}
 	
+<<<<<<< HEAD
+=======
+	@Override
+>>>>>>> refs/remotes/origin/master
 	public int hashCode() {
 		
 		return Objects.hash(nombre, apellidos, cargo);
