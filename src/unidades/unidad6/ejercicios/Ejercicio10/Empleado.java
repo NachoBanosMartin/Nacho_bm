@@ -2,7 +2,7 @@ package unidades.unidad6.ejercicios.Ejercicio10;
 
 import java.util.Objects;
 
-public class Empleado { //
+public class Empleado { 
 
 	private int id;
 	private String nombre;
@@ -150,11 +150,7 @@ public class Empleado { //
 		return sonIguales;
 	}
 	
-	@Override
-	public int hashCode() {
-		
-		return Objects.hash(nombre, apellidos, cargo);
-	}
+}
 	
 	
 
@@ -167,4 +163,4 @@ public class Empleado { //
 	
 	
 	
-}
+
