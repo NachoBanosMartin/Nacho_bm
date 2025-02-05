@@ -1,5 +1,7 @@
 package unidades.unidad7.ejercicios;
 
+import java.util.Scanner;
+
 public class Ejercicio9 {
 	
 	/*
@@ -24,6 +26,51 @@ public class Ejercicio9 {
 	*/
 
 	public static void main(String[] args) {
+		
+		Scanner entrada = new Scanner (System.in);
+		
+		System.out.println("Introduzca el nombre del producto (Salchichón, Chorizo, Paleta"
+				+ " o Jamón) que desee consultar: ");
+		String producto = entrada.next();
+		
+		System.out.println("Introduzca los días de curación");
+		int diasCuracion = entrada.nextInt();
+		
+		String nivelCuracion = obtenerNivelCuracion(producto, diasCuracion);
+
+        System.out.println("El nivel de curación del " + producto + " es: " + nivelCuracion);
+		
+
+	}
+
+	private static String obtenerNivelCuracion(String producto, int diasCuracion) {
+        
+		switch (producto.toLowerCase()) {
+
+		 case "salchichón":
+	     case "chorizo":
+			 if (diasCuracion < 100 ) {
+				 return "Bajo";
+			 } else if (diasCuracion >= 100) {
+	             return "Medio";
+	         } else if (diasCuracion == 300) {
+	             return "Alto";
+	         } else {
+	             return "Muy Alto";
+	         }
+	     case "paleta":
+	     case "jamón":
+	         if (diasCuracion <= 100) {
+	             return "Bajo";
+	         } else if (diasCuracion <= 300) {
+	             return "Medio";
+	         } else {
+	             return "Alto";
+	         }
+	     default:
+	         return "Tipo de embutido no válido";
+	         
+		}
 
 	}
 
