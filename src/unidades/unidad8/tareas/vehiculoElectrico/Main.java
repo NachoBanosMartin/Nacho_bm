@@ -1,8 +1,5 @@
 package unidades.unidad8.tareas.vehiculoElectrico;
 
-import unidades.unidad8.ejemplos.fauna.Animal;
-import unidades.unidad8.ejemplos.fauna.Perro;
-
 public class Main {
 
 	public static void main(String[] args) {
