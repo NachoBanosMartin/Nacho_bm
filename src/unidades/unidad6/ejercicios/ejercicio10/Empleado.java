@@ -1,4 +1,4 @@
-package unidades.unidad6.ejercicios.Ejercicio10;
+package unidades.unidad6.ejercicios.ejercicio10;
 
 import java.util.Objects;
 

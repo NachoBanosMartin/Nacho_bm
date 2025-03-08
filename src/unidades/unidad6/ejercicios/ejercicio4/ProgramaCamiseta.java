@@ -1,4 +1,4 @@
-package unidades.unidad6.ejercicios.Ejercicio4;
+package unidades.unidad6.ejercicios.ejercicio4;
 
 /*
  La serigrafía de tu pueblo pretende crear una aplicación para organizar los datos de las camisetas

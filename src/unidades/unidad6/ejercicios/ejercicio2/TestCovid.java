@@ -1,4 +1,4 @@
-package unidades.unidad6.ejercicios.Ejercicio2;
+package unidades.unidad6.ejercicios.ejercicio2;
 
 // Diseñe una clase para modelar los datos de un test de covid.
 

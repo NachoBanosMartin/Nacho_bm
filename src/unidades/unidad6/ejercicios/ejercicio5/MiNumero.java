@@ -1,4 +1,4 @@
-package unidades.unidad6.ejercicios.Ejercicio5;
+package unidades.unidad6.ejercicios.ejercicio5;
 
 /*
   Escribe en Java una clase llamada MiNumero que calcule el doble, el triple y el cuádruple de un número y 

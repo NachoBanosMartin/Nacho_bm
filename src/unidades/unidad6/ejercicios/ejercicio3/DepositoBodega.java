@@ -1,4 +1,4 @@
-package unidades.unidad6.ejercicios.Ejercicio3;
+package unidades.unidad6.ejercicios.ejercicio3;
 
 //Diseñe una case para representar los datos y funciones que pueden tener depósitos de una bodega de vino.
  

@@ -1,4 +1,4 @@
-package unidades.unidad6.ejercicios.Ejercicio1;
+package unidades.unidad6.ejercicios.ejercicio1;
 
 /* 
  Diseñe una clase que contenga los siguientes datos personales: nombre, dirección, 

@@ -1,4 +1,4 @@
-package unidades.unidad6.ejercicios.Ejercicio6;
+package unidades.unidad6.ejercicios.ejercicio6;
 
 public class Empleado { //
 

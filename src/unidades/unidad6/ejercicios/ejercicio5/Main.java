@@ -1,4 +1,4 @@
-package unidades.unidad6.ejercicios.Ejercicio5;
+package unidades.unidad6.ejercicios.ejercicio5;
 
 public class Main {
 
