@@ -27,7 +27,7 @@ public class EscribirFicheroNIO {
 			
 			
 			Path path = Paths.get(nombreFichero);  // Se abre la consola si hay algun error
-
+																			 // TRUNCATE_EXISTING (hace lo mismo que el false)
 			Files.write(path, Arrays.asList("Nuevos DAtos"), StandardOpenOption.APPEND);
 		} catch (NoSuchFileException e) {
 			System.err.println("No existe el fichero");
