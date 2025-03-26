@@ -1,4 +1,4 @@
-package unidades.unidad9.ejercicios;
+package unidades.unidad9.ejercicios.ejercicioClase;
 
 public abstract class Viaje {
 	

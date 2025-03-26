@@ -1,4 +1,4 @@
-package unidades.unidad9.ejemplos.metodosColeecciones;
+package unidades.unidad9.ejemplos.metodosColecciones;
 
 import java.io.BufferedReader;
 import java.io.FileNotFoundException;

@@ -1,10 +1,10 @@
-package unidades.unidad9.ejercicios;
+package unidades.unidad9.ejercicios.ejercicioClase;
 
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.Scanner;
 
-public class AppTRansporte {
+public class AppTransporte {
 	
 	public static final String SEPARADOR = ";";
 	public static final String FORMATO_MATRICULA = "^\\d{4}[BCDFGHJKLMNPQRSTVWXYZ]{3}$";

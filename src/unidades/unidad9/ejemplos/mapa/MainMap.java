@@ -17,7 +17,7 @@ public class MainMap {
 		cuentas.put("Ramiro", 99.9);
 		cuentas.put("Carlos", -12.76);
 		
-		// BUscar por clave valor
+		// Buscar por clave valor
 		
 		if(cuentas.containsKey("Ana")) {
 			System.out.println("Contiene datos de Ana");

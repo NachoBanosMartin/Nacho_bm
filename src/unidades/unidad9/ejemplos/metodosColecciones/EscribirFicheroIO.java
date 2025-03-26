@@ -1,4 +1,4 @@
-package unidades.unidad9.ejemplos.metodosColeecciones;
+package unidades.unidad9.ejemplos.metodosColecciones;
 
 import java.io.BufferedWriter;
 import java.io.FileWriter;

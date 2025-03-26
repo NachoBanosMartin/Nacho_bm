@@ -1,4 +1,4 @@
-package unidades.unidad9.ejercicios;
+package unidades.unidad9.ejercicios.ejercicioClase;
 
 public class TransporteMercancia extends Viaje{
 
