@@ -1,0 +1,30 @@
+MERCANCIA;1234ABC;Juan Pérez;Madrid;Sevilla;12.5;refrigerada
+PELIGROSO;5678XYZ;Ana López;Valencia;Bilbao;4;explosivos
+ANIMALES;9012DEF;Carlos Ruiz;Córdoba;Granada;80;porcino
+MERCANCIA;3456GHI;Laura Martínez;Zaragoza;Murcia;20;pesada
+PELIGROSO;7890JKL;Pedro Sánchez;Salamanca;León;2;químicos
+ANIMALES;1122MNO;Lucía Torres;Toledo;Cuenca;45;ovino
+MERCANCIA;3344PQR;Manuel García;Huelva;Almería;10;general
+PELIGROSO;5566STU;Elena Vidal;Oviedo;Gijón;5;radiactivos
+ANIMALES;7788VWX;Miguel Díaz;Badajoz;Cáceres;30;bovino
+MERCANCIA;9900YZA;Isabel Romero;Pamplona;Logroño;8.5;refrigerada
+PELIGROSO;2233BCD;Sergio Ramos;Burgos;Soria;1;químicos
+ANIMALES;4455EFG;Raúl Torres;Madrid;Ávila;60;aves
+MERCANCIA;6677HIJ;Paula Cano;Lugo;Ourense;15;pesada
+PELIGROSO;8899KLM;Javier Blanco;San Sebastián;Vitoria;3;explosivos
+ANIMALES;1010NOP;Cristina Flores;Tarragona;Lérida;25;porcino
+MERCANCIA;1212QRS;Alberto Gil;Segovia;Zamora;18;general
+PELIGROSO;3434TUV;Sandra Nieto;Huesca;Teruel;2;radiactivos
+ANIMALES;5656WXY;Fernando Alba;Ceuta;Melilla;40;ovino
+MERCANCIA;7878ZAB;Eva Martín;Bilbao;Santander;22;refrigerada
+PELIGROSO;9090CDE;Mario Alonso;A Coruña;Pontevedra;4;químicos
+ANIMALES;2323FGH;Patricia Rey;Granada;Jaén;55;bovino
+MERCANCIA;4545IJK;Rosa Molina;Albacete;Ciudad Real;9;pesada
+PELIGROSO;6767LMN;Alonso Vega;Lugo;Ferrol;1;explosivos
+ANIMALES;8989OPQ;Gloria Ortega;Elche;Alicante;70;aves
+MERCANCIA;3131RST;Óscar Navarro;Valladolid;Palencia;11;general
+PELIGROSO;5353UVW;Clara Ruiz;Castellón;Valencia;5;radiactivos
+ANIMALES;7575XYZ;Andrés Bravo;Huelva;Sevilla;33;porcino
+MERCANCIA;9797ABC;Beatriz León;Zaragoza;Huesca;14;refrigerada
+PELIGROSO;1919DEF;Tomás Romero;Toledo;Talavera;2;químicos
+ANIMALES;4141GHI;Lidia Ramos;Avilés;Gijón;36;ovino
