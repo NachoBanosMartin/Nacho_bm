@@ -14,7 +14,8 @@ public class Animales extends Transporte {
 		this.tiposAnimales = tiposAnimales;
 	}
 	
-	public int calcularCostoAnimales() {		
+	@Override 
+	public double calcularCoste() {		
 		
 		return COSTO_BASE_ANIMALES + (5 * numAnimales);		
 	}

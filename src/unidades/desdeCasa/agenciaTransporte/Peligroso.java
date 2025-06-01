@@ -14,9 +14,11 @@ public class Peligroso extends Transporte{
 		this.tipoMaterial = tipoMaterial;
 	}
 	
-	public int calcularCostoPeligroso() {
+	 
+	@Override 
+	public double calcularCoste() {
 		
-		int costoTotal = 0;
+		double costoTotal = 0;
 		
 		switch (nivelRiesgo) {
 		case Uno:

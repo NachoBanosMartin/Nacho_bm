@@ -7,15 +7,16 @@ public class Mercancias extends Transporte{
 	private TiposMercancias tipoMercancia;
 	
 	
-	public Mercancias(String matricula, String condcutor, String origen, String destino, double peso,
+	public Mercancias(String matricula, String conductor, String origen, String destino, double peso,
 			TiposMercancias tipoMercancia) {
-		super(matricula, condcutor, origen, destino);
+		super(matricula, conductor, origen, destino);
 		this.peso = peso;
 		this.tipoMercancia = tipoMercancia;
 	}
 	
 	
-	public double calcularCosteMercancias() {
+	@Override
+	public double calcularCoste() {
 		
 		double costoTotal = 0;
 		

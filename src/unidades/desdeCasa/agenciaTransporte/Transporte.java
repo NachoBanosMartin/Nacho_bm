@@ -14,7 +14,10 @@ public abstract class Transporte {
 		this.origen = origen;
 		this.destino = destino;
 	}
-
+	
+	public abstract double calcularCoste();
+	
+	
 	public String getMatricula() {
 		return matricula;
 	}
