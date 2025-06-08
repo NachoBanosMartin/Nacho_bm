@@ -66,7 +66,7 @@ public class Mercancias extends Transporte{
 
 	@Override
 	public String toString() {
-		return "Mercancias [peso=" + peso + ", tipoMercancia=" + tipoMercancia + "]";
+		return "MERCANCIA;" + super.toString() + ";" + peso + ";" + tipoMercancia;
 	}
 	
 	

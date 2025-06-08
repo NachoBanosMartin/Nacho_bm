@@ -67,7 +67,7 @@ public class Peligroso extends Transporte{
 
 	@Override
 	public String toString() {
-		return "Peligroso [nivelRiesgo=" + nivelRiesgo + ", tipoMaterial=" + tipoMaterial + "]";
+		return "PELIGROSO;" + super.toString() + ";" + nivelRiesgo + ";" + tipoMaterial;
 	}
 	
 	

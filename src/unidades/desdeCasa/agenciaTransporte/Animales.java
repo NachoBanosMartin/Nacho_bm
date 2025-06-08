@@ -43,7 +43,7 @@ public class Animales extends Transporte {
 
 	@Override
 	public String toString() {
-		return "Animales [numAnimales=" + numAnimales + ", tiposAnimales=" + tiposAnimales + "]";
+		return "ANIMALES;" + super.toString() + ";" + numAnimales + ";" + tiposAnimales;
 	}
 	
 	

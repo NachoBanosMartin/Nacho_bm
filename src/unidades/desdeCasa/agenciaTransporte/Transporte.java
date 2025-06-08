@@ -52,8 +52,7 @@ public abstract class Transporte {
 
 	@Override
 	public String toString() {
-		return "Transporte [matricula=" + matricula + ", condcutor=" + condcutor + ", origen=" + origen + ", destino="
-				+ destino + "]";
+		return  matricula + ";" + condcutor + ";" + origen + ";" + destino;
 	}
 	
 	
