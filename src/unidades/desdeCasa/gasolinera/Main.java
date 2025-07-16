@@ -1,189 +1,257 @@
 package unidades.desdeCasa.gasolinera;
 
-import java.io.BufferedReader;
-import java.io.BufferedWriter;
-import java.io.FileReader;
-import java.io.FileWriter;
-import java.io.IOException;
-import java.util.ArrayList;
+import java.io.*;
+import java.util.Date;
 import java.util.Scanner;
-
-import unidades.desdeCasa.agenciaTransporte.Animales;
-import unidades.desdeCasa.agenciaTransporte.Mercancias;
-import unidades.desdeCasa.agenciaTransporte.NivelRiego;
-import unidades.desdeCasa.agenciaTransporte.Peligroso;
-import unidades.desdeCasa.agenciaTransporte.TiposAnimales;
-import unidades.desdeCasa.agenciaTransporte.TiposMaterial;
-import unidades.desdeCasa.agenciaTransporte.TiposMercancias;
-import unidades.desdeCasa.agenciaTransporte.Transporte;
 
 public class Main {
 
 	public static final Scanner entrada = new Scanner(System.in);
+	public static Usuario[] usuarios;
+    public static Usuario usuarioRegistrado = null;
 
 	public static void main(String[] args) {
 
-		int opcion;
-		do {
+        usuarios = cargarUsuarios("usuariosGasolinera.txt");
 
-			mostrarMenu();
-			opcion = entrada.nextInt();
+        if (!acceso(usuarios)) {
+            System.out.println("Credenciales incorrectas. Saliendo del sistema.");
+            return;
+        }
 
-			switch (opcion) {
-			case 1:
+        int opcion;
 
-				break;
-			case 2:
+        Surtidor[] surtidores = {
+			            new Surtidor("Gasolina95", 1000, 800, 1.545),
+			            new Surtidor("Gasolina98", 1000, 800, 1.727),
+			            new Surtidor("Diésel", 1000, 600, 1.462)
+        };
 
-				break;
-			case 3:
+        do {
+            mostrarMenu();
+            opcion = entrada.nextInt();
+            entrada.nextLine();
+            
+            switch (opcion) {
+                case 1:
+                    repostar(surtidores, usuarioRegistrado);
+                    break;
+                case 2:
+                    verComprobantes(usuarioRegistrado); 
+                    break;
+                case 3:
+                    mostrarEstadisticasPersonales();
+                    break;
+                case 4:
+                    reabastecerSurtidores(surtidores); 
+                    break;
+                case 5:
+                    mostrarEstadisticasGenerales(surtidores);
+                    break;
+                case 6:
+                    System.out.println("Gracias por usar la gasolinera. Vuelva cuando quiera.");
+                    break;
+                default:
+                    System.out.println("Opción inválida.");
+            }
 
-				break;
-			case 4:
+        } while (opcion != 6);
 
-				break;
-			case 5:
+        guardarUsuarios();
+    }
 
-				break;
-			case 6:
-				System.out.println("Gracias por usar la gasolinera. Vuelva cuando quiera.");
-				break;
-			default:
-				System.out.println("Opción marcada inválida.");
-			}
+    
 
-		} while (opcion != 6);
-	}
+    public static boolean acceso(Usuario[] usuarios) {
+        System.out.println("---- INICIO DE SESIÓN ----");
+        System.out.println("Usuario: ");
+        String nombre = entrada.next();
+        System.out.println("Contraseña: ");
+        String contrasena = entrada.next();
 
-	private static void mostrarMenu() {
+        for (Usuario usuario : usuarios) {
+            if (usuario.getNombre().equals(nombre) && usuario.getContrasena().equals(contrasena)) {
+                usuarioRegistrado = usuario;
+                return true;
+            }
+        }
+        return false;
+    }
 
-		System.out.println("------GASOLINERA------");
-		System.out.println("1. Repostar.");
-		System.out.println("2. Ver comprobantes.");
-		System.out.println("3. Consultar estadisticas personales.");
-		System.out.println("4. Reabastecer depositos.");
-		System.out.println("5. Consultar estadisticas generales.");
-		System.out.println("6. Salir.");
-		System.out.println("Seleccione la opción que desee: ");
-	}
+    public static Usuario[] cargarUsuarios(String nombreFichero) {
+        int numUsuarios = obtenerNumUsuReg(nombreFichero);
+        Usuario[] usuarios = new Usuario[numUsuarios];
 
-	public void guardarFichero() {
+        try (BufferedReader lector = new BufferedReader(new FileReader(nombreFichero))) {
+            String linea;
+            int i = 0;
 
-		try {
-			BufferedWriter escritor = new BufferedWriter(
-					new FileWriter("C:\\Users\\nacho\\git\\Nacho_bm\\gasolinera.txt"));
-			String linea;
-			for (Transporte transporte : cargar) {
-				linea = transporte.toString();
-				escritor.write(linea);
-				escritor.newLine();
-			}
-		} catch (IOException e) {
-			System.out.println("Fallo al escribir el fichero.");
-		}
-	}
+            while ((linea = lector.readLine()) != null && i < numUsuarios) {
+                String[] datos = linea.split(";");
+                if (datos.length == 6) {
+                    String nombre = datos[0];
+                    String contrasena = datos[1];
+                    double litros = Double.parseDouble(datos[2]);
+                    double importe = Double.parseDouble(datos[3]);
+                    int puntos = Integer.parseInt(datos[4]);
+                    int cupones = Integer.parseInt(datos[5]);
 
-	public static int obtenerNumUsuReg(String nombreFichero) {
+                    usuarios[i] = new Usuario(nombre, contrasena, litros, importe, puntos, cupones);
+                    i++;
+                }
+            }
+        } catch (IOException e) {
+            System.out.println("Error al leer los usuarios: " + e.getMessage());
+        }
 
-		int contador = 0;
+        return usuarios;
+    }
 
-		try (BufferedReader br = new BufferedReader(new FileReader(nombreFichero))) {
-			while (br.readLine() != null) {
-				contador++;
-			}
-		} catch (IOException e) {
-			System.out.println("Error al leer el archivo: " + e.getMessage());
-		}
+    public static int obtenerNumUsuReg(String nombreFichero) {
+        int contador = 0;
+        try (BufferedReader lector = new BufferedReader(new FileReader(nombreFichero))) {
+            while (lector.readLine() != null) {
+                contador++;
+            }
+        } catch (IOException e) {
+            System.out.println("Error al leer el archivo.");
+        }
+        return contador;
+    }
 
-		return contador;
-	}
+    public static void guardarUsuarios() {
+        try (BufferedWriter escritor = new BufferedWriter(new FileWriter("usuariosGasolinera.txt"))) {
+            for (Usuario usuario : usuarios) {
+                escritor.write(usuario.toString());
+                escritor.newLine();
+            }
+        } catch (IOException e) {
+            System.out.println("Error guardando usuarios: " + e.getMessage());
+        }
+    }
 
-	private static Usuario[] cargarUsuarios() {
-		
-		int tamanoVector = obtenerNumUsuReg("C:\\Users\\nacho\\git\\Nacho_bm\\gasolinera.txt") ;
 
-		Usuario[] usuario = new Usuario[tamanoVector];
+    public static void repostar(Surtidor[] surtidores, Usuario usuarioRegistrado) {
+        System.out.println("Indique el tipo de combustible: ");
+        String tipo = entrada.nextLine();
 
-		try {
-			FileReader fichero = new FileReader("C:\\Users\\nacho\\git\\Nacho_bm\\gasolinera.txt");
-			BufferedReader leer = new BufferedReader(fichero);
+        Surtidor surtidor = buscarSurtidorPorTipo(surtidores, tipo);
+        if (surtidor == null) {
+            System.out.println("Tipo de combustible no encontrado.");
+            return;
+        }
 
-			String linea = leer.readLine();
-			while (linea != null) {
-				String datos[] = linea.split(";");
-				if (datos.length == 6) {
-					
-					
-						break;
-					case "peligroso":
-						NivelRiego nivel = null;
-						switch (datos[5].toLowerCase()) {
-						case "uno":
-							nivel = NivelRiego.Uno;
-							break;
-						case "dos":
-							nivel = NivelRiego.Dos;
-							break;
-						case "tres":
-							nivel = NivelRiego.Tres;
-							break;
-						case "cuatro":
-							nivel = NivelRiego.Cuatro;
-							break;
-						case "cinco":
-							nivel = NivelRiego.Cinco;
-							break;
-						default:
-							break;
-						}
-						TiposMaterial tipoP = null;
-						switch (datos[6].toLowerCase()) {
-						case "quimicos":
-							tipoP = TiposMaterial.Quimicos;
-							break;
-						case "explosivos":
-							tipoP = TiposMaterial.Explosivos;
-							break;
-						case "radiactivos":
-							tipoP = TiposMaterial.Radiactivos;
-							break;
-						default:
-							break;
-						}
-						int riesgo = Integer.parseInt(datos[5]);
-						Peligroso peligroso = new Peligroso(datos[1], datos[2], datos[3], datos[4], nivel, tipoP);
-						cargar.add(peligroso);
-						break;
-					case "animales":
-						TiposAnimales tipoA = null;
-						switch (datos[6].toLowerCase()) {
-						case "bovino":
-							tipoA = TiposAnimales.Bovino;
-							break;
-						case "ovino":
-							tipoA = TiposAnimales.Ovino;
-							break;
-						case "porcino":
-							tipoA = TiposAnimales.Porcino;
-							break;
-						case "aves":
-							tipoA = TiposAnimales.Aves;
-							break;
-						default:
-							break;
-						}
-						int cantidad = Integer.parseInt(datos[5]);
-						Animales animales = new Animales(datos[1], datos[2], datos[3], datos[4], cantidad, tipoA);
-						cargar.add(animales);
-						break;
-					}
-				}
-			}
+        System.out.println("Indique la cantidad a repostar: ");
+        double litros = entrada.nextDouble();
 
-		} catch (IOException e) {
-			System.out.println("Error al leer el fichero.");
-		}
+        if (litros > surtidor.getLitrosDisponibles()) {
+            System.out.println("No hay suficientes litros disponibles.");
+            return;
+        }
 
-	}
+        double importe = litros * surtidor.getPrecioPorLitro();
+        usuarioRegistrado.aplicarDescuento(importe);
+
+        surtidor.setLitrosDisponibles(surtidor.getLitrosDisponibles() - litros);
+        usuarioRegistrado.setTotalLitrosRepostados(usuarioRegistrado.getTotalLitrosRepostados() + litros);
+        usuarioRegistrado.acumuladorPuntos(litros);
+
+        Date fecha = new Date();
+        Comprobante comprobante = new Comprobante(fecha, tipo, importe, litros, surtidor.getLitrosDisponibles());
+        guardarComprobante(comprobante);
+
+        System.out.println("Repostaje completado.");
+    }
+
+    public static Surtidor buscarSurtidorPorTipo(Surtidor[] surtidores, String tipo) {
+        for (Surtidor surtidor : surtidores) {
+            if (surtidor.getTipoCombustible().equalsIgnoreCase(tipo)) {
+                return surtidor;
+            }
+        }
+        return null;
+    }
+
+    public static void guardarComprobante(Comprobante comprobante) {
+        try (BufferedWriter escritor = new BufferedWriter(new FileWriter("comprobantes.txt", true))) {
+            escritor.write(guardarFormato(comprobante));
+            escritor.newLine();
+        } catch (IOException e) {
+            System.out.println("Error al guardar el comprobante.");
+        }
+    }
+
+    private static String guardarFormato(Comprobante c) {
+        return "Comprobante;" + c.getFecha().getTime() + ";" + c.getTipoCombustible() + ";" +
+               c.getImporte() + ";" + c.getLitrosSuministrados() + ";" + c.getLitrosRestantesDeposito();
+    }
+
+    public static void verComprobantes(Usuario usuarioRegistrado) {
+        File archivo = new File("comprobantes.txt");
+
+        if (!archivo.exists()) {
+            System.out.println("No hay comprobantes guardados.");
+            return;
+        }
+
+        try (BufferedReader lector = new BufferedReader(new FileReader(archivo))) {
+            String linea;
+            boolean encontrado = false;
+
+            while ((linea = lector.readLine()) != null) {
+                Comprobante comprobante = Comprobante.impresion(linea);
+                if (comprobante != null) {
+                    comprobante.mostrar();
+                    encontrado = true;
+                }
+            }
+
+            if (!encontrado) {
+                System.out.println("No tienes comprobantes aún.");
+            }
+
+        } catch (IOException e) {
+            System.out.println("Error al leer comprobantes.");
+        }
+    }
+
+
+    public static void mostrarEstadisticasPersonales() {
+        System.out.println("------ ESTADÍSTICAS ------");
+        System.out.println("Usuario: " + usuarioRegistrado.getNombre());
+        System.out.println("Litros repostados: " + usuarioRegistrado.getTotalLitrosRepostados());
+        System.out.println("Importe total gastado: " + usuarioRegistrado.getImporteGastado());
+        System.out.println("Puntos acumulados: " + usuarioRegistrado.getPuntosAcumulados());
+        System.out.println("Cupones disponibles: " + usuarioRegistrado.getCuponesDisponibles());
+    }
+
+    public static void mostrarEstadisticasGenerales(Surtidor[] surtidores) {
+        System.out.println("------ ESTADÍSTICAS GENERALES ------");
+        for (Surtidor surtidor : surtidores) {
+            System.out.println("Tipo: " + surtidor.getTipoCombustible());
+            System.out.println("Capacidad total: " + surtidor.getMaxLitros());
+            System.out.println("Litros disponibles: " + surtidor.getLitrosDisponibles());
+            System.out.println("-----------------------------");
+        }
+    }
+
+    public static void reabastecerSurtidores(Surtidor[] surtidores) {
+        for (Surtidor surtidor : surtidores) {
+            surtidor.setLitrosDisponibles(surtidor.getMaxLitros());
+        }
+        System.out.println("Todos los surtidores han sido reabastecidos.");
+    }
+
+    private static void mostrarMenu() {
+        System.out.println("------GASOLINERA------");
+        System.out.println("1. Repostar.");
+        System.out.println("2. Ver comprobantes.");
+        System.out.println("3. Consultar estadísticas personales.");
+        System.out.println("4. Reabastecer depósitos.");
+        System.out.println("5. Consultar estadísticas generales.");
+        System.out.println("6. Salir.");
+        System.out.println("Seleccione la opción que desee: ");
+    }
 
 }
+

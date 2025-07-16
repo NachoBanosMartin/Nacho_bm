@@ -115,15 +115,4 @@ public class Usuario {
 		return  nombre + ";" + contrasena + ";"	+ totalLitrosRepostados + ";" + importeGastado + ";"
 				+ puntosAcumulados + ";" + cuponesDisponibles;
 	}
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-
 }

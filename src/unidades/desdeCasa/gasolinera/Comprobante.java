@@ -7,15 +7,15 @@ import java.util.Timer;
 
 public class Comprobante {
 	
+	
 	private Date fecha;
-	private Timer hora;
 	private String tipoCombustible;
 	private double importe;
 	private double litrosSuministrados;
 	private double litrosRestantesDeposito;
 	
 	
-	public Comprobante(Date fecha, Timer hora, String tipoCombustible, double importe, double litrosSuministrados,
+	public Comprobante(Date fecha, String tipoCombustible, double importe, double litrosSuministrados,
 			double litrosRestantesDeposito) {
 		super();
 		this.fecha = fecha;
@@ -29,7 +29,6 @@ public class Comprobante {
 	public Comprobante() {
 		super();
 		this.fecha = new Date();
-		this.hora = new Timer();
 		this.tipoCombustible = " ";
 		this.importe = 0.0;
 		this.litrosSuministrados = 0.0;
@@ -45,17 +44,6 @@ public class Comprobante {
 	public void setFecha(Date fecha) {
 		this.fecha = fecha;
 	}
-
-
-	public Timer getHora() {
-		return hora;
-	}
-
-
-	public void setHora(Timer hora) {
-		this.hora = hora;
-	}
-
 
 	public String getTipoCombustible() {
 		return tipoCombustible;
@@ -99,9 +87,31 @@ public class Comprobante {
 
 	@Override
 	public String toString() {
-		return "Comprobante [fecha=" + fecha + ", hora=" + hora + ", tipoCombustible=" + tipoCombustible + ", importe="
+		return "Comprobante [fecha=" + fecha + ", tipoCombustible=" + tipoCombustible + ", importe="
 				+ importe + ", litrosSuministrados=" + litrosSuministrados + ", litrosRestantesDeposito="
 				+ litrosRestantesDeposito + "]";
+	}
+	
+	public static Comprobante impresion(String linea) {
+	    String[] datos = linea.split(";");
+	    if (datos.length != 6) return null;
+
+	    Comprobante comprobante = new Comprobante();
+	    comprobante.setFecha(new Date(Long.parseLong(datos[1])));
+	    comprobante.setTipoCombustible(datos[2]);
+	    comprobante.setImporte(Double.parseDouble(datos[3]));
+	    comprobante.setLitrosSuministrados(Double.parseDouble(datos[4]));
+	    comprobante.setLitrosRestantesDeposito(Double.parseDouble(datos[5]));
+
+	    return comprobante;
+	}
+	
+	public void mostrar() {
+	    System.out.println("Fecha: " + fecha);
+	    System.out.println("Combustible: " + tipoCombustible);
+	    System.out.println("Importe: " + importe + " euros");
+	    System.out.println("Litros suministrados: " + litrosSuministrados);
+	    System.out.println("Litros restantes en depósito: " + litrosRestantesDeposito);
 	}
 	
 	
